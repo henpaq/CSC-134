@@ -41,7 +41,7 @@ int main() {
     cout << endl;
     cout << " Thank you for shopping with us!" << endl;
     cout << endl;
-    cout << " " << num_apples << " apples" << "\t" << "$" << price_per_apple << endl;
+    cout << " " << num_apples << " apples" << "\t" << "$" << total << endl;
     cout << "---------------------------" << endl;
     cout << " Tax (7%)" << "\t" << "$" << tax_amount << endl;
     cout << "---------------------------" << endl;
