@@ -16,6 +16,7 @@ int main() {
     // variables
     int roll, die1, die2;
     int seed;
+    int point;
 
     // main code
     cout << "Welcome to the craps table" << endl;
@@ -25,7 +26,7 @@ int main() {
     // set the random seed
     seed = time(0);
     srand(seed);
-    
+
     // roll the dice
     die1 = (rand() % 6) + 1; // roll 0-5, add 1
     die2 = (rand() % 6) + 1;
@@ -33,14 +34,27 @@ int main() {
     cout << "Your dice roll is: " << die1 << " and " << die2 << " -> " << roll << endl;
 
     // TODO: Check for win, loss, or point
-    if (roll == 4 || roll == 2) {
+    if (roll == 7) {
         cout << "Loss" << endl;
     }
     else if (roll == 6 || roll == 9 || roll == 12) {
         cout << "Win!" << endl;
     }
     else {
-        cout << "Your point is " << roll << endl;
+        point == roll;
+        cout << "Your point is " << point << endl;
+        do {
+            die1 = (rand() % 6) + 1; // roll 0-5, add 1
+            die2 = (rand() % 6) + 1;
+            roll = die1 + die2;
+            cout << "Your dice roll is: " << die1 << " and " << die2 << " -> " << roll << endl;
+        } while (roll != point && roll != 7);
+        if (point == roll) {
+            cout << "Win!" << endl;
+        }
+        else {
+            cout << "Loss" << endl;
+        }
     }
 
     return 0; 
