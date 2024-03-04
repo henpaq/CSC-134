@@ -7,13 +7,22 @@ H Paquin
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
 
   // declare variables
-  string answer;
+    string answer;
     int choice;
+    double meal_price;
+    int choice2;
+    double tax_percent = 0.08;
+    double tax_amount;
+    double total_price; // meal + tax
+    double tip = 0.15;
+    double tip_amount;
+    double total2_price;
 
   // Question 1
   cout << "Question 1" << endl;
@@ -35,6 +44,43 @@ int main() {
     // Question 2
     cout << "Question 2" << endl;
     cout << endl;
+
+    // main code
+    cout << fixed << setprecision(2);
+    cout << "What is the price of your meal?" << endl;
+    cin >> meal_price;
+    cout << endl;
+    cout << "Will your order be dine in or takeout?" << endl;
+    cout << "Dine in (1) or Takeout (2)" << endl;
+    cin >> choice2;
+    
+    if (choice2 == 1) {
+    tax_amount = meal_price * tax_percent;
+    total_price = meal_price + tax_amount;
+    tip_amount = total_price * tip;
+    total2_price = tip_amount + total_price;
+
+    cout << "Thank you for dining with us" << endl;
+    cout << endl;
+    cout << "\t" << "$" << meal_price << endl;
+    cout << "Tax (8%)" << "\t" << "$" << tax_amount << endl;
+    cout << "Tip (15%)" << "\t" << "$" << tip_amount << endl;
+    cout << "---------------------------" << endl;
+    cout << "Total" << "\t\t" << "$" << total2_price << endl;
+    cout << endl;
+    }
+    if (choice2 == 2) {
+    tax_amount = meal_price * tax_percent;
+    total_price = meal_price + tax_amount;
+    tip_amount = total_price * tip;
+    cout << "Thank you for dining with us" << endl;
+    cout << endl;
+    cout << "\t" << "$" << meal_price << endl;
+    cout << "Tax (8%)" << "\t" << "$" << tax_amount << endl;
+    cout << "---------------------------" << endl;
+    cout << "Total" << "\t\t" << "$" << total2_price << endl;
+    cout << endl;
+    }
 
     // Question 3
     // ask the question
