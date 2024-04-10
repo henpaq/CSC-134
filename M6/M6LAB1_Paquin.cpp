@@ -8,11 +8,8 @@ H Paquin
 
 #include <iostream>
 using namespace std;
+#include "M6LAB1_utils.h"
 
-const int EMPTY = 0;
-const int MAX_SHELLS = 6;
-const int BLANK = 1;
-const int LIVE = 2;
 // array is a global variable (all functions can see it)
 int magazine[MAX_SHELLS] = {BLANK, LIVE, LIVE, BLANK, EMPTY, EMPTY};
 
@@ -31,6 +28,7 @@ int main() {
     string name = shell_name(shell);
     cout << name << ", ";
   }
+  cout << endl;
   // 2nd option: Range-based for loop
   for (int shell: magazine) {
     cout << shell_name(shell) << " ,";
@@ -39,22 +37,3 @@ int main() {
 
   cout << endl;
 } 
-
-// utility functions
-
-string shell_name(int shell) {
-    // input: number of shell
-    // output: name ("empty", "blank", "live")
-    string name;
-    if (shell == EMPTY) {
-        name = "Empty";
-    }
-    if (shell == BLANK) {
-        name = "Blank";
-    }
-    if (shell == LIVE) {
-        name = "Live";
-    }
-
-    return name;
-}
