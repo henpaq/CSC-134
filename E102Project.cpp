@@ -37,6 +37,7 @@ int main() {
         cout << endl;
   }
   }
+  
   else if (2 == choice) {
   	cout << "Your answer is incorrect." << endl;
     cout << endl;
